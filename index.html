@@ -2,11 +2,20 @@
 <html lang="en">
 
 <head>
+    <!-- SEO & Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniro - Furniture Website</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <title>Abdul Samad Heckthon project</title>
+    <meta name="description" content="Discover the best furniture for your home at Furniro.">
+    <link  rel="Icon" type="image/png" href="./logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* --- Reset & Global --- */
         * {
             margin: 0;
             padding: 0;
@@ -22,43 +31,31 @@
             line-height: 1.6;
             color: #333;
             background-color: #fff;
+            overflow-x: hidden;
         }
+
 
         h1,
         h2,
         h3,
-        h4,
-        h5,
-        h6 {
+        h4 {
             color: #3A3A3A;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         h1 {
-            font-size: 2.75rem;
+            font-size: 2.5rem;
         }
 
         h2 {
             font-size: 2rem;
         }
 
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        h4 {
-            font-size: 1.25rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-
         a {
             text-decoration: none;
             color: inherit;
-            transition: color 0.3s ease;
+            transition: 0.3s;
         }
 
         ul {
@@ -66,94 +63,94 @@
         }
 
         img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
             display: block;
         }
 
-        .container {
-            max-width: 1240px;
+        /* Layout */
+        .wrapper {
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-image {
-            width: 50px;
-            height: 50px;
         }
 
         section {
             padding: 4rem 0;
         }
 
-        .btn {
+        /* Buttons */
+        .action-btn {
             display: inline-block;
-            padding: 0.75rem 2rem;
+            padding: 0.8rem 2.5rem;
             font-weight: 600;
-            text-transform: uppercase;
-            border-radius: 2px;
-            text-align: center;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            border: 1px solid #B88E2F;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .btn-primary {
+        .action-btn-main {
             background-color: #B88E2F;
             color: #fff;
         }
 
-        .btn-primary:hover {
-            background-color: #a07d29;
+        .action-btn-main:hover {
+            background-color: #fff;
+            color: #B88E2F;
         }
 
-        .btn-secondary {
+        .action-btn-alt {
             background-color: transparent;
             color: #B88E2F;
-            border: 1px solid #B88E2F;
         }
 
-        .btn-secondary:hover {
+        .action-btn-alt:hover {
             background-color: #B88E2F;
             color: #fff;
         }
 
-        .section-title {
+        .heading-center {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .section-subtitle {
+        .subheading-center {
             text-align: center;
             color: #666;
             max-width: 600px;
             margin: 0 auto 3rem auto;
         }
 
+        /* --- Header --- */
         header {
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
+            background: #fff;
             position: sticky;
             top: 0;
-            z-index: 100;
-            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        header .container {
+        header .wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 80px;
         }
 
-        .logo {
-            font-size: 2.125rem;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .brand-name {
+            font-size: 24px;
             font-weight: 700;
-            color: #000;
+        }
+
+        .brand-logo-text {
+            font-size: 32px;
+            color: #B88E2F;
+            font-weight: bold;
         }
 
         header nav ul {
@@ -161,710 +158,394 @@
             gap: 2.5rem;
         }
 
-        header nav a {
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
         header nav a:hover {
             color: #B88E2F;
         }
 
-        .header-icons {
+        .header-actions {
             display: flex;
-            align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
-        .header-icons svg {
-            width: 20px;
-            height: 20px;
-            color: #000;
+        .header-actions svg {
+            width: 24px;
+            height: 24px;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        .header-icons svg:hover {
+        .header-actions svg:hover {
             color: #B88E2F;
         }
 
-        .hero {
-            background-image: url('./98fb219fa11f805aade2224f1d6658764a2395df.jpg');
+        /* --- Banner --- */
+        .banner {
+            background-image: url('./hero.jpg');
             background-size: cover;
             background-position: center;
-            min-height: calc(100vh - 80px);
+            height: calc(100vh - 80px);
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding: 2rem;
+            padding: 0 5%;
         }
 
-        .hero-content {
+        .banner-content {
             background-color: #FFF3E3;
             padding: 2.5rem;
             border-radius: 10px;
-            max-width: 550px;
-            margin-right: 5%;
+            max-width: 600px;
+            animation: fadeIn 1s ease-out;
         }
 
-        .hero-content span {
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: #333;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hero-content h1 {
-            color: #B88E2F;
-            line-height: 1.2;
-            margin: 0.5rem 0 1rem;
-        }
-
-        .hero-content p {
-            margin-bottom: 2rem;
-            color: #666;
-        }
-
-        .browse-range {
-            background-color: #FFF;
-        }
-
-        .range-grid {
+        /* --- Categories --- */
+        .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
-        .range-item {
+        .category-item {
             text-align: center;
+            cursor: pointer;
         }
 
-        .range-item img {
-            width: 100%;
-            height: 400px;
+        .category-item img {
+            height: 480px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: 0.4s;
         }
 
-        .range-item img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .category-item:hover img {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .range-item h3 {
-            font-weight: 600;
-            font-size: 1.25rem;
-        }
-
-        .products {
-            background-color: #FFF;
-        }
-
-        .product-grid {
+        /* --- Products --- */
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 2rem;
         }
 
-        .product-card {
-            background-color: #F4F5F7;
-            border-radius: 5px;
+        .product {
+            background: #F4F5F7;
+            position: relative;
             overflow: hidden;
-            position: relative;
-            transition: box-shadow 0.3s ease;
+            transition: 0.4s;
         }
 
-        .product-card:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .product-card-image {
-            position: relative;
-        }
-
-        .product-card-image img {
-            width: 100%;
+        .product-image img {
             height: 300px;
             object-fit: cover;
         }
 
-        .product-tag {
+        .product-badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: #E97171;
+            top: 20px;
+            right: 20px;
+            background: #E97171;
             color: white;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
         }
 
-        .product-tag.new {
-            background-color: #2EC1AC;
+        .product-badge.new {
+            background: #2EC1AC;
         }
 
         .product-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(43, 40, 40, 0.7);
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 58, 58, 0.75);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            padding: 1rem;
+            transition: 0.3s;
         }
 
-        .product-card:hover .product-overlay {
+        .product:hover .product-overlay {
             opacity: 1;
-            visibility: visible;
         }
 
-        .product-overlay .btn-primary {
-            background-color: #1f1d1d;
+        .overlay-btn {
+            background: #fff;
             color: #B88E2F;
-            border: 1px solid #B88E2F;
-            padding: 0.6rem 1.5rem;
-            margin-bottom: 1rem;
+            padding: 12px 40px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: 0.3s;
         }
 
-        .product-overlay .btn-primary:hover {
-            background-color: #B88E2F;
+        .overlay-btn:hover {
+            background: #B88E2F;
             color: #fff;
         }
 
-        .overlay-links {
-            display: flex;
-            gap: 1.5rem;
+        .product-info {
+            padding: 1.5rem;
         }
 
-        .overlay-links a {
+        .product-price {
+            font-size: 1.25rem;
             font-weight: 600;
-            font-size: 0.9rem;
-            color: #f1eeee;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .overlay-links a svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .overlay-links a:hover {
-            color: #B88E2F;
-        }
-
-        .product-card-content {
-            padding: 1rem;
-        }
-
-        .product-card-content h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-card-content .category {
-            color: #898989;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .product-card-content .price {
-            font-size: 1.1rem;
-            font-weight: 700;
             color: #3A3A3A;
         }
 
-        .products .btn-secondary {
-            display: block;
-            width: max-content;
-            margin: 3rem auto 0 auto;
-        }
-
+        /* --- Inspiration Slider (Fixed & Optimized) --- */
         .inspiration {
             background-color: #FCF8F3;
-            padding: 4rem 20px;
+            padding: 4rem 0;
+            overflow: hidden;
         }
 
-        .inspiration .container {
+        .inspiration-container {
             display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            gap: 2rem;
+            align-items: center;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 40px;
         }
 
         .inspiration-text {
-            flex: 1;
+            flex: 0 0 35%;
             min-width: 300px;
-        }
-
-        .inspiration-text h2 {
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .inspiration-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .inspiration-gallery {
-            flex: 1.5;
-            min-width: 300px;
-            position: relative;
         }
 
         .inspiration-slider-wrapper {
-            width: 100%;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .gallery-slide {
+            flex: 0 0 370px;
+            /* Fixed width for consistent sliding */
+            height: 520px;
+            position: relative;
+            transition: all 0.4s ease;
+            opacity: 0.7;
+            transform: scale(0.92);
+            border-radius: 4px;
             overflow: hidden;
         }
 
-        .inspiration-slider-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        .gallery-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .inspiration-slide {
-            flex: 0 0 100%;
-            display: grid;
-            grid-template-columns: 2fr 1.2fr;
-            grid-template-rows: auto auto;
-            gap: 1.5rem;
-        }
-
-        .inspiration-gallery .img-main {
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .inspiration-gallery .img-thumb1 {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .inspiration-gallery .img-thumb2 {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .slider-controls {
-            position: absolute;
-            top: 50%;
-            left: 0;
+        .gallery-slide img {
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 1rem;
-            pointer-events: none;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .slider-btn {
-            background-color: rgba(255, 255, 255, 0.8);
+        /* Slider numbering overlay */
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            font-weight: bold;
+            color: #B88E2F;
+            backdrop-filter: blur(4px);
+        }
+
+        .gallery-controls {
+            position: absolute;
+            bottom: 40px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-nav-btn {
+            background: white;
             border: none;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #B88E2F;
+            font-size: 1.2rem;
             cursor: pointer;
-            pointer-events: all;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: #B88E2F;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
         }
 
-        .slider-btn:hover {
-            background-color: #B88E2F;
+        .slider-nav-btn:hover {
+            background: #B88E2F;
             color: #fff;
         }
 
-        #prev-slide {
-            margin-left: -20px;
-        }
-
-        #next-slide {
-            margin-right: -20px;
-        }
-
-        .slider-pagination {
-            position: absolute;
-            bottom: -2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .pagination-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #D8D8D8;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .pagination-dot.active {
-            background-color: #B88E2F;
-        }
-
-        .share-setup {
-            background-color: #FFF;
-        }
-
-        .share-setup .section-title {
-            font-weight: 500;
+        .slide-indicator {
+            margin-top: 20px;
+            font-weight: 600;
             color: #666;
-            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .share-setup .section-subtitle {
-            font-size: 2rem;
-            color: #3A3A3A;
-            margin-bottom: 2rem;
+        .dots-container {
+            display: flex;
+            gap: 8px;
         }
 
-        .share-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 300px 300px;
-            gap: 1.5rem;
-            height: 620px;
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: 0.3s;
         }
 
-        .share-grid .item {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .dot.active {
+            background: #B88E2F;
+            width: 25px;
             border-radius: 10px;
         }
 
-        .share-grid .item-1 {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-        }
-
-        .share-grid .item-2 {
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
-        }
-
-        .share-grid .item-3 {
-            grid-column: 2 / 3;
-            grid-row: 1 / 3;
-        }
-
-        .share-grid .item-4 {
-            grid-column: 3 / 4;
-            grid-row: 1 / 2;
-        }
-
-        .share-grid .item-5 {
-            grid-column: 3 / 4;
-            grid-row: 2 / 3;
-        }
-
-        .share-grid .item-6 {
-            grid-column: 4 / 5;
-            grid-row: 1 / 3;
-        }
-
-        footer {
-            border-top: 1px solid #eee;
-            padding: 3rem 0 0 0;
-            margin-top: 3rem;
-        }
-
-        .footer-main {
+        /* --- Social Grid --- */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 2rem;
-            padding-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-auto-rows: 200px;
+            grid-auto-flow: dense;
+            gap: 15px;
+            padding: 20px 0;
         }
 
-        .footer-col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-col.about p {
-            max-width: 250px;
-        }
-
-        .footer-col h4 {
-            color: #898989;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-col ul a {
-            font-weight: 600;
-        }
-
-        .footer-col ul a:hover {
-            color: #B88E2F;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #eee;
-            padding: 1.5rem 0;
-            text-align: left;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        /* Custom Grid for Desktop to match the image exactly */
-        .custom-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(2, 200px);
-            gap: 16px;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        .grid-item {
+        .gallery-grid-item {
             position: relative;
             overflow: hidden;
-            background-color: #f0f0f0;
-            border-radius: 5px;
+            border-radius: 4px;
         }
 
-        .grid-item img {
+        .gallery-grid-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: 0.5s;
         }
 
-        .grid-item:hover img {
-            transform: scale(1.05);
+        .gallery-grid-item:hover img {
+            transform: scale(1.1);
         }
 
-        /* Specific placement based on the reference image */
-        /* Left Side - Tall Shelf */
-        .item-1 {
-            grid-column: span 1;
-            grid-row: span 2;
-            height: 100%;
-        }
-
-        /* Mid-Left - Desk & Chair */
-        .item-2 {
-            grid-column: span 4;
-            grid-row: span 1;
-        }
-
-        .item-3 {
+        .gallery-item-wide {
             grid-column: span 2;
-            grid-row: span 1;
         }
 
-        /* Center - Dining Room */
-        .item-4 {
-            grid-column: span 2;
-            grid-row: span 2;
-            margin-top: 40px;
-        }
-
-        /* Mid-Right - Bedroom & Frame */
-        .item-5 {
-            grid-column: span 3;
-            grid-row: span 1;
-        }
-
-        .item-6 {
-            grid-column: span 2;
-            grid-row: span 1;
-        }
-
-        /* Far Right - Kitchen */
-        .item-7 {
-            grid-column: span 2;
+        .gallery-item-tall {
             grid-row: span 2;
         }
 
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid #D8D8D8;
+            padding: 4rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-links a:hover {
+            color: #B88E2F;
+            padding-left: 5px;
+        }
+
+        /* Responsive */
         @media (max-width: 992px) {
-            .container {
-                padding: 0 30px;
-            }
-
-            .header-icons {
-                gap: 1.5rem;
-            }
-
-            header nav ul {
-                gap: 1.5rem;
-            }
-
-            .hero {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .hero-content {
-                margin-right: 0;
-            }
-
-            .inspiration .container {
+            .inspiration-container {
                 flex-direction: column;
             }
 
             .inspiration-text {
+                width: 100%;
                 text-align: center;
                 margin-bottom: 2rem;
             }
 
-            .slider-pagination {
-                bottom: -2.5rem;
+            .slider-indicator {
+                justify-content: center;
             }
 
-            .inspiration-gallery {
-                margin-bottom: 2rem;
-            }
-
-            .share-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: auto;
-                height: auto;
-            }
-
-            .share-grid .item {
-                height: 300px;
-            }
-
-            .share-grid .item-3,
-            .share-grid .item-6 {
-                grid-column: auto;
-                grid-row: auto;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
+            .banner {
+                justify-content: center;
                 text-align: center;
-            }
-
-            .footer-col.about p {
-                margin: 0 auto 1rem auto;
-            }
-
-            /* Custom grid tablet adjustments */
-            .custom-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: auto;
-            }
-
-            .item-1,
-            .item-2,
-            .item-3,
-            .item-4,
-            .item-5,
-            .item-6,
-            .item-7 {
-                grid-column: span 1;
-                grid-row: span 1;
-                height: 250px;
-                margin-top: 0;
-            }
-
-            .item-2,
-            .item-5 {
-                grid-column: span 2;
             }
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-
-            header .container {
+            header .wrapper {
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 1rem;
+                height: auto;
+                padding: 15px;
             }
 
-            header nav {
-                width: 100%;
+            nav ul {
+                gap: 1rem;
             }
 
-            header nav ul {
-                justify-content: space-around;
-                flex-wrap: wrap;
+            .gallery-slide {
+                flex: 0 0 280px;
+                height: 380px;
             }
 
-            .header-icons {
-                justify-content: space-around;
-                width: 100%;
-                border-top: 1px solid #eee;
-                padding-top: 1rem;
-            }
-
-            .inspiration-slide {
+            .footer-content {
                 grid-template-columns: 1fr;
-            }
-
-            .inspiration-gallery .img-main,
-            .inspiration-gallery .img-thumb1,
-            .inspiration-gallery .img-thumb2 {
-                grid-column: auto;
-                grid-row: auto;
-                height: 300px;
-            }
-
-            .inspiration-gallery .img-main {
-                height: 400px;
-            }
-
-            .share-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Custom grid mobile adjustments */
-            .custom-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .item-2,
-            .item-5 {
-                grid-column: span 1;
+                text-align: center;
             }
         }
     </style>
@@ -872,13 +553,12 @@
 
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="logo-group">
-                <img class="logo-image"
-                    src="./2727769ba74736d502746301ed573ed8940fc322-removebg-preview.png"
-                    alt="Furniro Logo">
-                <h2 class="logo">Furniro</h2>
+        <div class="wrapper">
+            <div class="brand">
+                <span class="brand-logo-text">AS.</span>
+                <h2 class="brand-name">Furniro</h2>
             </div>
             <nav>
                 <ul>
@@ -888,477 +568,314 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-icons">
-                <a href="#" aria-label="Account">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A1.5 1.5 0 0118 21.75H6a1.5 1.5 0 01-1.499-1.632z" />
-                    </svg>
-                </a>
-                <a href="#" aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                    </svg>
-                </a>
-                <a href="#" aria-label="Wishlist">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                    </svg>
-                </a>
-                <a href="#" aria-label="Cart">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </a>
+            <div class="header-actions">
+                <!-- Icons simplified -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A1.5 1.5 0 0118 21.75H6a1.5 1.5 0 01-1.499-1.632z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <span>New Arrival</span>
+        <!-- Banner -->
+        <section class="banner">
+            <div class="banner-content">
+                <span>NEW ARRIVAL</span>
                 <h1>Discover Our New Collection</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
-                    mattis, pulvinar dapibus leo.</p>
-                <a href="#" class="btn btn-primary">BUY NOW</a>
+                <p>Transform your living space with our latest modern furniture designs. Comfort meets elegance.</p>
+                <a href="#" class="action-btn action-btn-main">BUY NOW</a>
             </div>
         </section>
 
-        <section class="browse-range">
-            <div class="container">
-                <h2 class="section-title">Browse The Range</h2>
-                <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div class="range-grid">
-                    <div class="range-item">
-                        <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Dining room furniture">
+        <!-- Categories -->
+        <section class="categories">
+            <div class="wrapper">
+                <h2 class="heading-center">Browse The Range</h2>
+                <p class="subheading-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="categories-grid">
+                    <article class="category-item">
+                        <img src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Dining">
                         <h3>Dining</h3>
-                    </div>
-                    <div class="range-item">
-                        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Living room furniture">
+                    </article>
+                    <article class="category-item">
+                        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Living">
                         <h3>Living</h3>
-                    </div>
-                    <div class="range-item">
-                        <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Bedroom furniture">
+                    </article>
+                    <article class="category-item">
+                        <img src="https://images.pexels.com/photos/3773575/pexels-photo-3773575.png?auto=compress&cs=tinysrgb&w=800"
+                            alt="Bedroom">
                         <h3>Bedroom</h3>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
+        <!-- Products -->
         <section class="products">
-            <div class="container">
-                <h2 class="section-title">Our Products</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Syltherine">
-                            <div class="product-tag">-30%</div>
+            <div class="wrapper">
+                <h2 class="heading-center">Our Products</h2>
+                <div class="products-grid">
+                    <article class="product">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Chair">
+                            <div class="product-badge">-30%</div>
                             <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
+                                <button class="overlay-btn">Add to cart</button>
                             </div>
                         </div>
-                        <div class="product-card-content">
+                        <div class="product-info">
                             <h3>Syltherine</h3>
-                            <p class="category">Stylish cafe chair</p>
-                            <p class="price">Rp 2.500.000</p>
+                            <p class="product-category">Stylish cafe chair</p>
+                            <p class="product-price">Rp 2.500.000</p>
                         </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Leviosa">
-                            <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
-                            </div>
+                    </article>
+                    <article class="product">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Chair">
+                            <div class="product-overlay"><button class="overlay-btn">Add to cart</button></div>
                         </div>
-                        <div class="product-card-content">
+                        <div class="product-info">
                             <h3>Leviosa</h3>
-                            <p class="category">Stylish cafe chair</p>
-                            <p class="price">Rp 2.500.000</p>
+                            <p class="product-category">Stylish cafe chair</p>
+                            <p class="product-price">Rp 2.500.000</p>
                         </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Lolito">
-                            <div class="product-tag new">New</div>
-                            <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
-                            </div>
+                    </article>
+                    <article class="product">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Sofa">
+                            <div class="product-badge new">New</div>
+                            <div class="product-overlay"><button class="overlay-btn">Add to cart</button></div>
                         </div>
-                        <div class="product-card-content">
+                        <div class="product-info">
                             <h3>Lolito</h3>
-                            <p class="category">Luxury big sofa</p>
-                            <p class="price">Rp 7.000.000</p>
+                            <p class="product-category">Luxury big sofa</p>
+                            <p class="product-price">Rp 7.000.000</p>
                         </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Respira">
-                            <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
-                            </div>
+                    </article>
+                    <article class="product">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Table">
+                            <div class="product-overlay"><button class="overlay-btn">Add to cart</button></div>
                         </div>
-                        <div class="product-card-content">
+                        <div class="product-info">
                             <h3>Respira</h3>
-                            <p class="category">Outdoor bar table and stool</p>
-                            <p class="price">Rp 500.000</p>
+                            <p class="product-category">Outdoor bar table</p>
+                            <p class="product-price">Rp 500.000</p>
                         </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/1275235/pexels-photo-1275235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Grifo">
-                            <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card-content">
-                            <h3>Grifo</h3>
-                            <p class="category">Night lamp</p>
-                            <p class="price">Rp 1.500.000</p>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/1275235/pexels-photo-1275235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Muggo">
-                            <div class="product-tag new">New</div>
-                            <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card-content">
-                            <h3>Muggo</h3>
-                            <p class="category">Small mug</p>
-                            <p class="price">Rp 150.000</p>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Pingky">
-                            <div class="product-tag">-50%</div>
-                            <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card-content">
-                            <h3>Pingky</h3>
-                            <p class="category">Cute bed set</p>
-                            <p class="price">Rp 7.000.000</p>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-card-image">
-                            <img src="https://images.pexels.com/photos/1275235/pexels-photo-1275235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                alt="Potty">
-                            <div class="product-overlay">
-                                <a href="#" class="btn btn-primary">Add to cart</a>
-                                <div class="overlay-links">
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.195.025.39.042.586.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586.042m0 0a2.25 2.25 0 010 2.186m0-2.186c-.195.025-.39.042-.586.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042m0 0a2.25 2.25 0 000 2.186m0-2.186c.195-.025.39-.042.586-.042h1.591a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5h-1.591a.641.641 0 01-.586-.042m0 0a2.25 2.25 0 010-2.186m0 2.186c-.195-.025-.39-.042-.586-.042h-1.591a1.5 1.5 0 00-1.5 1.5v1.5a1.5 1.5 0 001.5 1.5h1.591c.196 0 .39-.017.586-.042z" />
-                                        </svg> Share</a>
-                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                        </svg> Like</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card-content">
-                            <h3>Potty</h3>
-                            <p class="category">Minimalist flower pot</p>
-                            <p class="price">Rp 500.000</p>
-                        </div>
-                    </div>
+                    </article>
                 </div>
-                <a href="#" class="btn btn-secondary">Show More</a>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" class="action-btn action-btn-alt">Show More</a>
+                </div>
             </div>
         </section>
 
+        <!-- Inspiration Slider (30 Images) -->
         <section class="inspiration">
-            <div class="container">
+            <div class="inspiration-container">
                 <div class="inspiration-text">
                     <h2>50+ Beautiful rooms inspiration</h2>
-                    <p>Our designer already made a lot of beautiful prototipe of rooms that inspire you. Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
-                    <a href="#" class="btn btn-primary">Explore More</a>
-                </div>
-                <div class="inspiration-gallery">
-                    <div class="inspiration-slider-wrapper">
-                        <div class="inspiration-slider-track">
-                            <div class="inspiration-slide">
-                                <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Living room inspiration" class="img-main">
-                                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Bedroom inspiration" class="img-thumb1">
-                                <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Dining room inspiration" class="img-thumb2">
-                            </div>
-                            <div class="inspiration-slide">
-                                <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Office inspiration" class="img-main">
-                                <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Kitchen inspiration" class="img-thumb1">
-                                <img src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Bathroom inspiration" class="img-thumb2">
-                            </div>
-                            <div class="inspiration-slide">
-                                <img src="https://images.pexels.com/photos/1275235/pexels-photo-1275235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Outdoor inspiration" class="img-main">
-                                <img src="https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Garden inspiration" class="img-thumb1">
-                                <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    alt="Patio inspiration" class="img-thumb2">
-                            </div>
+                    <p>Our designer already made a lot of beautiful prototypes of rooms that inspire you.</p>
+                    <a href="#" class="action-btn action-btn-main">Explore More</a>
+
+                    <div class="slide-indicator">
+                        <span id="current-slide-num">01</span> / <span>30</span>
+                        <div class="dots-container" id="dots-container">
+                            <!-- Dots added via JS -->
                         </div>
                     </div>
+                </div>
 
-                    <div class="slider-controls">
-                        <button class="slider-btn" id="prev-slide" aria-label="Previous Slide">&lt;</button>
-                        <button class="slider-btn" id="next-slide" aria-label="Next Slide">&gt;</button>
+                <div class="inspiration-slider-wrapper">
+                    <div class="gallery-track" id="gallery-track">
+                        <!-- Images added via JS -->
                     </div>
 
-                    <div class="slider-pagination" id="slider-pagination">
+                    <div class="gallery-controls">
+                        <button class="slider-nav-btn" id="prev-slide" aria-label="Previous">&lt;</button>
+                        <button class="slider-nav-btn" id="next-slide" aria-label="Next">&gt;</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="share-setup">
-            <div class="container">
-                <h4 class="section-title">Share your setup with</h4>
-                <h2 class="section-subtitle">#FuniroFurniture</h2>
-
-                <div class="custom-grid">
-                    <div class="grid-item item-1">
-                        <img src="https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Shelf">
-                    </div>
-                    <div class="grid-item item-2">
-                        <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Workspace">
-                    </div>
-                    <div class="grid-item item-3">
-                        <img src="https://images.pexels.com/photos/1275235/pexels-photo-1275235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Chair">
-                    </div>
-                    <div class="grid-item item-4">
-                        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Dining">
-                    </div>
-                    <div class="grid-item item-5">
-                        <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Bedroom">
-                    </div>
-                    <div class="grid-item item-6">
-                        <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Frame">
-                    </div>
-                    <div class="grid-item item-7">
-                        <img src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Kitchen">
-                    </div>
+        <!-- Social Grid -->
+        <section class="social">
+            <div class="wrapper">
+                <h4 class="heading-center">Share your setup with</h4>
+                <h2 class="subheading-center">#FuniroFurniture</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-grid-item gallery-item-tall"><img
+                            src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Setup"></div>
+                    <div class="gallery-grid-item gallery-item-wide"><img
+                            src="https://images.pexels.com/photos/276566/pexels-photo-276566.jpeg" alt="Setup"></div>
+                    <div class="gallery-grid-item"><img
+                            src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg" alt="Setup"></div>
+                    <div class="gallery-grid-item"><img
+                            src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg" alt="Setup"></div>
+                    <div class="gallery-grid-item gallery-item-tall"><img
+                            src="https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg" alt="Setup"></div>
+                    <div class="gallery-grid-item gallery-item-wide"><img
+                            src="https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg" alt="Setup"></div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-main">
-                <div class="footer-col about">
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-brand">
                     <h3>Furniro.</h3>
-                    <p>Desinged by Abdul Sammad</p>
+                    <p>400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
                 </div>
-                <div class="footer-col links">
+                <div class="footer-links">
                     <h4>Links</h4>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Shop</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col help">
+                <div class="footer-links">
                     <h4>Help</h4>
                     <ul>
                         <li><a href="#">Payment Options</a></li>
-                        <li><a href="#">Returns</a></li>
                         <li><a href="#">Privacy Policies</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>2025 furino. All rights reserved</p>
-            </div>
+            <p style="text-align: left; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 1rem;">2025 Furniro.
+                All rights reserved</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const track = document.querySelector('.inspiration-slider-track');
-            const slides = Array.from(track.children);
+            const track = document.getElementById('gallery-track');
             const nextButton = document.getElementById('next-slide');
             const prevButton = document.getElementById('prev-slide');
-            const paginationContainer = document.getElementById('slider-pagination');
+            const dotsContainer = document.getElementById('dots-container');
+            const currentSlideNum = document.getElementById('current-slide-num');
 
-            if (!track || !nextButton || !prevButton || !paginationContainer) {
-                console.error('Slider elements not found!');
-                return;
+            const totalImages = 30;
+            let currentIndex = 0;
+
+            // 1. Dynamically Generate 30 Furniture Images
+            const fragment = document.createDocumentFragment();
+
+            for (let i = 0; i < totalImages; i++) {
+                const slide = document.createElement('div');
+                slide.classList.add('gallery-slide');
+                if (i === 0) slide.classList.add('active');
+
+                const img = document.createElement('img');
+                // Using LoremFlickr for reliable interior/furniture images
+                img.src = `https://loremflickr.com/370/520/furniture,interior?random=${i}`;
+                img.alt = `Room Inspiration ${i + 1}`;
+
+                // Number Overlay
+                const numOverlay = document.createElement('div');
+                numOverlay.classList.add('slide-number');
+                numOverlay.textContent = i < 9 ? `0${i + 1}` : i + 1;
+
+                slide.appendChild(img);
+                slide.appendChild(numOverlay);
+                fragment.appendChild(slide);
+
+                // Create dot (only first 5 to avoid clutter, or we can cycle them)
+                if (i < 5) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dotsContainer.appendChild(dot);
+                }
+            }
+            track.appendChild(fragment);
+
+            // 2. Slider Logic
+            const slides = Array.from(document.querySelectorAll('.gallery-slide'));
+
+            function updateSlider() {
+                // Calculate movement based on fixed width of slide + gap
+                // 370px (width) + 20px (gap) = 390px
+                const itemWidth = 390;
+                const moveAmount = -(itemWidth * currentIndex);
+
+                track.style.transform = `translateX(${moveAmount}px)`;
+
+                // Update Classes
+                slides.forEach(slide => slide.classList.remove('active'));
+                if (slides[currentIndex]) {
+                    slides[currentIndex].classList.add('active');
+                }
+
+                // Update Text Number
+                currentSlideNum.textContent = currentIndex < 9 ? `0${currentIndex + 1}` : currentIndex + 1;
+
+                // Update Dots (Simple visual feedback)
+                const dots = Array.from(document.querySelectorAll('.dot'));
+                dots.forEach((dot, idx) => {
+                    dot.classList.remove('active');
+                    // Map current index to dot (modulo logic if more slides than dots)
+                    if (idx === currentIndex % dots.length) {
+                        dot.classList.add('active');
+                    }
+                });
             }
 
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            let currentSlide = 0;
-            const totalSlides = slides.length;
-
-            // Create pagination dots
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('pagination-dot');
-                if (i === 0) dot.classList.add('active');
-                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-                dot.dataset.index = i;
-                paginationContainer.appendChild(dot);
-            }
-
-            const paginationDots = Array.from(paginationContainer.children);
-
-            // Update slider position and active dot
-            function updateSlider(targetSlide) {
-                track.style.transform = `translateX(-${targetSlide * 100}%)`;
-                paginationDots.forEach(dot => dot.classList.remove('active'));
-                paginationDots[targetSlide].classList.add('active');
-                currentSlide = targetSlide;
-            }
-
-            // Next slide
             nextButton.addEventListener('click', () => {
-                let nextSlide = (currentSlide + 1) % totalSlides;
-                updateSlider(nextSlide);
+                if (currentIndex < totalImages - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Loop back to start
+                }
+                updateSlider();
             });
 
-            // Previous slide
             prevButton.addEventListener('click', () => {
-                let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSlider(prevSlide);
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = totalImages - 1; // Loop to end
+                }
+                updateSlider();
             });
 
-            // Pagination dots click
-            paginationContainer.addEventListener('click', (e) => {
-                const targetDot = e.target.closest('button');
-                if (!targetDot) return;
+            // Auto Play
+            let autoPlay = setInterval(() => {
+                if (currentIndex < totalImages - 1) currentIndex++;
+                else currentIndex = 0;
+                updateSlider();
+            }, 3000);
 
-                const targetIndex = parseInt(targetDot.dataset.index, 10);
-                updateSlider(targetIndex);
+            // Pause on hover
+            track.addEventListener('mouseenter', () => clearInterval(autoPlay));
+            track.addEventListener('mouseleave', () => {
+                autoPlay = setInterval(() => {
+                    if (currentIndex < totalImages - 1) currentIndex++;
+                    else currentIndex = 0;
+                    updateSlider();
+                }, 3000);
             });
         });
     </script>
